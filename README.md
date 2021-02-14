@@ -2,8 +2,11 @@
 >源于[缠中说缠博客](http://blog.sina.com.cn/chzhshch)，欢迎加群探讨，
 >QQ群：`1125818657`，加群请备注自己对缠论的了解程度，谢谢。
 
-> 考虑到我自己对缠论的理解还在“四不像”水平，czsc 这个库只有参考的价值。画画笔和线段也还行，但这个离缠论分析还很远
+## 使用前必看
 
+* 这是个人开发的项目，虽然我已经尽可能的避坑，但可以很直接的说，这里面一定还有坑，使用前请仔细校验分析结果，发现新坑请告诉我，我来填；
+* 目前开发完成度不高，API可能会有比较大的变动，暂时不准备写文档，没有能力看懂源码的，不建议现在使用。
+* 免责声明：项目开源仅用于技术交流！
 
 ## 问题讨论
 
@@ -21,6 +24,8 @@
 **注意：** 如果CSDN的连接打不开，可以直接在 `czsc/docs` 目录下查看 html 文件
 
 ## 安装
+
+**注意:** python 版本必须大于等于 3.7 
 
 直接从github安装：
 ```
@@ -56,23 +61,10 @@ pip install czsc -U -i https://pypi.python.org/simple
 
 目前已经实现了缠论的 笔、线段、中枢 的自动识别，核心代码在 `czsc.analyze` 中；
 
-使用 Tushare Pro / 聚宽 / 掘金 / 天勤 的数据进行缠中说禅技术分析结果展示: https://github.com/zengbin93/czsc_web_ui
+使用聚宽数据的快速入门请查看 `examples\czsc 快速入门教程.ipynb`
 
-## examples
+## 捐赠支持
 
-* [pyecharts 可视化分析结果](https://github.com/zengbin93/czsc/blob/master/examples/pyecharts%20%E5%8F%AF%E8%A7%86%E5%8C%96%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C.ipynb)
-* [使用CZSC进行三买选股](https://github.com/zengbin93/czsc/blob/master/examples/%E4%BD%BF%E7%94%A8CZSC%E8%BF%9B%E8%A1%8C%E4%B8%89%E4%B9%B0%E9%80%89%E8%82%A1.ipynb)
+>如果这个项目对你的交易有些许帮助，可以扫码捐赠，让我知道一下，感谢！另外，**可以顺便提一个问题或需求。**
 
-
-## 结合 tushare.pro 的数据使用
-
-py 文件地址： examples/combine_with_tushare.py
-
-没有 token，到 https://tushare.pro/register?reg=7 注册下
-
-## 结合聚宽的数据使用
-
-py 文件地址： examples/use_czsc_with_jq.py
-
-
-
+<img src="https://github.com/zengbin93/czsc/blob/master/docs/donate.png" height="220" width="400">

@@ -8,18 +8,20 @@ import os
 import numpy as np
 import pandas as pd
 import czsc
+from czsc.objects import RawBar
 from czsc.cobra.utils import down_cross_count, kdj_gold_cross, kdj_dead_cross
 
 warnings.warn("czsc version is {}".format(czsc.__version__))
 
 cur_path = os.path.split(os.path.realpath(__file__))[0]
-# cur_path = "./test"
 
 
 def test_kdj_cross():
     file_kline = os.path.join(cur_path, "data/000001.SH_D.csv")
     kline = pd.read_csv(file_kline, encoding="utf-8")
-    bars = kline.to_dict("records")
+    bars = [RawBar(symbol=row['symbol'], open=row['open'], dt=row['dt'],
+                   close=row['close'], high=row['high'], low=row['low'], vol=row['vol'])
+            for _, row in kline.iterrows()]
 
     assert not kdj_gold_cross(kline, just=False)
     assert not kdj_gold_cross(bars, just=False)
